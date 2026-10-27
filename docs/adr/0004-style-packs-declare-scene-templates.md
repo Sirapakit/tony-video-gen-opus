@@ -1,0 +1,3 @@
+# A Style pack declares its Scene templates; the Story must conform
+
+Between a written Story and pixels sits a catalog: each deterministic Style pack declares Scene templates (e.g. a character in a location, a text card) with a JSON schema for the slots each one takes. The Story generator is forced to answer in that schema, so every Scene is validated before any Storyboard or Render and the UI builds its edit forms from the schema. The cost is that a pack can only draw what its templates describe. Free-form scene descriptions were rejected as unpredictable, and an LLM writing drawing code per Scene was rejected by ADR 0001. Agent-driven packs (lemo-opuscar) skip the catalog and receive the Story as a brief.

@@ -1,0 +1,3 @@
+# Run locally for one user, but behind a Job boundary
+
+The UI runs on localhost on the author's Mac and uses the already-logged-in Claude CLI subscription for the LLM step. The UI never receives or stores credentials: it shows `claude auth status` (account, auth method) and offers Sign in / Switch account, which only launch the CLI's own `claude auth login` flow; the CLI owns every token. Each Job records the account it ran under. Rendering needs local ffmpeg, Chrome and TTS models, so a hosted multi-user service is out of scope. Every pipeline run is still a Job with an id and status, so moving it to a server or queue later does not change the UI.
